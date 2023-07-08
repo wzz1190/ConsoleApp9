@@ -17,7 +17,6 @@ namespace sexdou
             string currentDirectory = Directory.GetCurrentDirectory();
             Console.WriteLine("当前路径: " + currentDirectory);
             //hg();
-            Console.ReadKey();
         }
 
 
