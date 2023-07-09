@@ -21,6 +21,7 @@ namespace sexdou
             {
                 Console.WriteLine("文件存在");
             }
+            connectionString += "Data Source="+connectionString;
             hg();
         }
 
