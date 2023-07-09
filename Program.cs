@@ -14,11 +14,11 @@ namespace sexdou
     {
         public static void Main(string[] args)
         {
-              string currentDirectory = Directory.GetCurrentDirectory();
-            Console.WriteLine("当前路径: " + currentDirectory);
-            connectionString = "Data Source=" + currentDirectory + "/mydb.db";
+              string lu = Directory.GetCurrentDirectory();
+              connectionString = "Data Source=" + lu + "/mydb.db";
             Console.WriteLine(connectionString);
             hg();
+            wihe(lu);
         }
 
 
@@ -130,6 +130,21 @@ namespace sexdou
                     }
                 };
             }
+
+
+        }
+
+        public static void wihe(string lu)
+        {
+            var s = SQLiteHelper.mdwihe(connectionString);
+            using (StreamWriter writer = new StreamWriter(lu+ "/README.md"))
+            {
+                foreach (var line in s)
+                {
+                    writer.WriteLine(line.Value);
+                }
+            }
+
 
 
         }
