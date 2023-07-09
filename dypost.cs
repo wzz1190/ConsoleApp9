@@ -13,9 +13,8 @@ public class HttpPost
     public static string headss = "x-ss-req-ticket: 1685717536840"+"\r\n"+ "sdk-version: 2"+ "\r\n"+ "x-tt-token:00b855323856ba5a259dd54dd87b3536570122a92b1a270196efd4712157a0a1adfa4dc0ac67fc0a49eee3e38b3b051e378e6118124380216b45f71de4c53af90d22b8d485b7202835159a95e801c02fb4d7a6b2dfc9c377e16b78d45d059345f099a-1.0.1";
     public static string requestParamss = "count=10&cursor=0&recommend_type=31&target_user_id=58527368040&sec_target_user_id=MS4wLjABAAAAlsmfAL5n6mJKLJfX_U_Vg9FjlCGbYo3AUhhiKx5POfk&yellow_point_count=0&address_book_access=2&gps_access=2&rec_impr_users=&show_super_account_when_follow_empty=0&mutual_friend_count=-1";
 
-    public static void Ss(string uid1, string uid2)
+    public static void Ss(string uid1, string uid2,string connectionString)
     {
-        //58527368040  MS4wLjABAAAAlsmfAL5n6mJKLJfX_U_Vg9FjlCGbYo3AUhhiKx5POfk
         string requestParamss = $"count=10&cursor=0&recommend_type=31&target_user_id={uid1}&sec_target_user_id={uid2}&yellow_point_count=0&address_book_access=2&gps_access=2&rec_impr_users=&show_super_account_when_follow_empty=0&mutual_friend_count=-1";
         string response = "";
         while (response == "")
@@ -27,7 +26,7 @@ public class HttpPost
         Root person = JsonConvert.DeserializeObject<Root>(response);
         foreach (var item in person.user_list)
         {
-            sqlbd.sqls(item);
+            sqlbd.sqls(item, connectionString);
         }
     }
 

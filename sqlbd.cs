@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 class sqlbd
 {
 
-    public static string connectionString = "Data Source=E:\\mydb.db";
-    public static void sqls(User_listItem stringitem)
+   // public static string connectionString = "Data Source=E:\\mydb.db";
+    public static void sqls(User_listItem stringitem, string connectionString)
     {
         string json = JsonConvert.SerializeObject(stringitem);
         using (var connection = new SQLiteConnection(connectionString))
@@ -44,7 +44,7 @@ class sqlbd
         }
     }
 
-    public static object sqlcheck()
+    public static object sqlcheck(string connectionString)
     {
         using (var connection = new SQLiteConnection(connectionString))
         {
@@ -82,7 +82,7 @@ class sqlbd
 
     }
 
-    public static object sqlsex( ref int idc)
+    public static object sqlsex(string connectionString, ref int idc)
     {
         using (var connection = new SQLiteConnection(connectionString))
         {
@@ -114,7 +114,7 @@ class sqlbd
 
     }
 
-    public static object sqlsexyun(ref int idc)
+    public static object sqlsexyun(ref int idc, string connectionString)
     {
         using (var connection = new SQLiteConnection(connectionString))
         {
@@ -145,7 +145,7 @@ class sqlbd
 
     }
 
-    public static void whisex(int idc,int bt)
+    public static void whisex(int idc,int bt, string connectionString)
     {
         using (var connection = new SQLiteConnection(connectionString))
         {
@@ -166,7 +166,7 @@ class sqlbd
 
     }
 
-    public static void xixixi(string x)
+    public static void xixixi(string x, string connectionString)
     {
         using (var connection = new SQLiteConnection(connectionString))
         {

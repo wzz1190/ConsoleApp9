@@ -16,7 +16,8 @@ namespace sexdou
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             Console.WriteLine("当前路径: " + currentDirectory);
-            if (File.Exists(currentDirectory+ "/mydb.db"))
+            connectionString = currentDirectory + "/mydb.db";
+            if (File.Exists(connectionString))
             {
                 Console.WriteLine("文件存在");
             }
@@ -24,15 +25,15 @@ namespace sexdou
         }
 
 
-        public static string connectionString = "Data Source=E:\\mydb.db";
+        public static string connectionString = "";
 
         public static void hg()
         {
 
 
 
-            User_listItem person = JsonConvert.DeserializeObject<User_listItem>(sqlbd.sqlcheck().ToString());
-            HttpPost.Ss(person.uid, person.sec_uid);
+            User_listItem person = JsonConvert.DeserializeObject<User_listItem>(sqlbd.sqlcheck(connectionString).ToString());
+            HttpPost.Ss(person.uid, person.sec_uid, connectionString);
             ConcurrentDictionary<int, string> ddc = SQLiteHelper.DoWorksqlwe();
             godic(ddc);
 
