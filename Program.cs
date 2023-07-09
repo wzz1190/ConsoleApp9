@@ -14,10 +14,10 @@ namespace sexdou
     {
         public static void Main(string[] args)
         {
-              string lu = Directory.GetCurrentDirectory();
-              connectionString = "Data Source=" + lu + "/mydb.db";
-            Console.WriteLine(connectionString);
-            hg();
+            //  string lu = Directory.GetCurrentDirectory();
+             // connectionString = "Data Source=" + lu + "/mydb.db";
+           // Console.WriteLine(connectionString);
+           // hg();
             wihe(lu);
         }
 
@@ -143,6 +143,14 @@ namespace sexdou
                 {
                     writer.WriteLine(line.Value+"\r\n");
                 }
+            }
+            using (StreamWriter sw = new StreamWriter("README.md", true))
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    sw.WriteLine("\r\n" + DateTime.Now.ToString("HH:mm:ss") + "\r\n");
+                }
+
             }
 
 
