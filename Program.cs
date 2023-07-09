@@ -16,6 +16,10 @@ namespace sexdou
         {
             string currentDirectory = Directory.GetCurrentDirectory();
             Console.WriteLine("当前路径: " + currentDirectory);
+            if (File.Exists(currentDirectory+ "/mydb.db"))
+            {
+                Console.WriteLine("文件存在");
+            }
             //hg();
         }
 
