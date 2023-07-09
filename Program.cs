@@ -137,11 +137,11 @@ namespace sexdou
         public static void wihe(string lu)
         {
             var s = SQLiteHelper.mdwihe(connectionString);
-            using (StreamWriter writer = new StreamWriter(lu+ "/README.md"))
+            using (StreamWriter writer = new StreamWriter("README.md", true))
             {
                 foreach (var line in s)
                 {
-                    writer.WriteLine(line.Value);
+                    writer.WriteLine(line.Value+"\r\n");
                 }
             }
 
