@@ -50,11 +50,11 @@ public static class SQLiteHelper
     }
 
 
-    public static ConcurrentDictionary<int, string> DoWorksqlwe()
+    public static ConcurrentDictionary<int, string> DoWorksqlwe(string connectionString)
     {
         // 创建独立的数据库连接
         ConcurrentDictionary<int, string> dic = new ConcurrentDictionary<int, string>();
-        using (SQLiteConnection threadConnection = new SQLiteConnection("Data Source=E:\\mydb.db"))
+        using (SQLiteConnection threadConnection = new SQLiteConnection(connectionString))
         {
             threadConnection.Open();
 

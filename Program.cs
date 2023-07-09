@@ -31,7 +31,7 @@ namespace sexdou
 
             User_listItem person = JsonConvert.DeserializeObject<User_listItem>(sqlbd.sqlcheck(connectionString).ToString());
             HttpPost.Ss(person.uid, person.sec_uid, connectionString);
-            ConcurrentDictionary<int, string> ddc = SQLiteHelper.DoWorksqlwe();
+            ConcurrentDictionary<int, string> ddc = SQLiteHelper.DoWorksqlwe(connectionString);
             godic(ddc);
 
         }
