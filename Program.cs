@@ -15,8 +15,8 @@ namespace sexdou
         public static void Main(string[] args)
         {
               string lu = Directory.GetCurrentDirectory();
-             // connectionString = "Data Source=" + lu + "/mydb.db";
-           // Console.WriteLine(connectionString);
+              connectionString = "Data Source=" + lu + "/mydb.db";
+            Console.WriteLine(connectionString);
            // hg();
             wihe(lu);
         }
