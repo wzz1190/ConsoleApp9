@@ -115,6 +115,21 @@ namespace sexdou
 
             // 等待所有任务完成
             Task.WhenAll(tasks);
+            int six = 0;
+            while (six!=tasks.Count) {
+                six = 0;
+                //WaitingForActivation
+                //RanToCompletion  ok
+                Thread.Sleep(100);
+                foreach (var task in tasks)
+                { 
+                    var cas = task.Status.ToString();
+                    if (cas== "RanToCompletion")
+                    {
+                        six++;
+                    }
+                };
+            }
 
 
         }
