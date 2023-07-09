@@ -152,6 +152,15 @@ namespace sexdou
                 }
 
             }
+            using (StreamReader sr = new StreamReader("README.md"))
+            {
+                string line;
+
+                while ((line = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(line);
+                }
+            }
 
 
 
