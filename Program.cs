@@ -130,6 +130,7 @@ namespace sexdou
                         six++;
                     }
                 };
+                Console.WriteLine($"当前six={six},tasks={tasks.Count}");
             }
 
 
