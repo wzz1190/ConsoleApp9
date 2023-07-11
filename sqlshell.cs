@@ -63,7 +63,7 @@ public static class SQLiteHelper
             {
                 SQLiteCommand command = threadConnection.CreateCommand();
                 command.Transaction = transaction;
-                command.CommandText = $"SELECT * FROM People WHERE Sex=0 LIMIT 99";
+                command.CommandText = $"SELECT * FROM People WHERE Sex=0 LIMIT 20";
 
                 using (SQLiteDataReader reader = command.ExecuteReader())
                 {
