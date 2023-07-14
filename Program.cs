@@ -52,12 +52,16 @@ namespace sexdou
             foreach (var item in pp)
             {
                 robojosns.roboRoot rr = null;
-                do
+                for (int i = 0; i < 20; i++)
                 {
-                    rr = UploadLocal.stcc(item).Result;
-                } while (rr == null);
+                    rr = await UploadLocal.stcc(item);
+                    if (rr!=null)
+                    {
+                        break;
+                    }
+                }
 
-                if (rr.predictions.Count > 0)
+                if (rr != null && rr.predictions.Count > 0)
                 {
                     if (rr.predictions[0].@class == "Girl" | rr.predictions[0].@class == "Woman")
                     {
